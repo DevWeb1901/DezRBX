@@ -1,66 +1,127 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Toko Robux</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Robux</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      color: #222;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 16px;
-    }
+body {
+  margin: 0;
+  background: #f2f2f2;
+  color: #222;
+}
 
-    /* BANNER */
-    .banner {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      margin-bottom: 20px;
-    }
+/* ===== BANNER ===== */
+.banner-wrapper {
+  padding: 16px;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 8px;
-    }
+.banner {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
 
-    p {
-      text-align: center;
-      color: #555;
-    }
+.banner img {
+  width: 100%;
+  display: block;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-  </style>
+/* ===== TITLE ===== */
+.title {
+  text-align: center;
+  margin: 20px 0 5px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.title p {
+  margin: 6px 0 0;
+  color: #666;
+}
+
+/* ===== CARD ===== */
+.container {
+  padding: 20px;
+}
+
+.card {
+  display: block;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  color: #555;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- BANNER MASUK DI SINI -->
-    <img src="banner.jpg" alt="Banner Toko Robux" class="banner">
+<!-- AUDIO KLIK -->
+<audio id="clickSound">
+  <source src="click.mp3" type="audio/mpeg">
+</audio>
 
-    <h1>TOKO ROBUX</h1>
-    <p>Murah • Aman • Terpercaya</p>
-
-    <div class="card">
-      <h3>💎 Jual Robux</h3>
-      <p>Fast process, aman & terpercaya</p>
-    </div>
-
+<!-- BANNER -->
+<div class="banner-wrapper">
+  <div class="banner">
+    <img src="banner.jpg" alt="Banner Toko Robux">
   </div>
+</div>
+
+<!-- TITLE -->
+<div class="title">
+  <h1>TOKO ROBUX</h1>
+  <p>Murah • Aman • Terpercaya</p>
+</div>
+
+<!-- CARD -->
+<div class="container">
+  <a href="https://wa.me/6287897493566"
+     class="card"
+     onclick="playClick()">
+     
+    <h3>💎 Jual Robux</h3>
+    <p>Fast process, aman & terpercaya</p>
+  </a>
+</div>
+
+<script>
+function playClick() {
+  const sound = document.getElementById("clickSound");
+  sound.currentTime = 0;
+  sound.play();
+}
+</script>
+
 </body>
 </html>
